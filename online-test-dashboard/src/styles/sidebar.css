@@ -1,0 +1,82 @@
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  
+  .profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #6A3DCC;
+    border-radius: 51px;
+  }
+  .profile-name-outer{
+    text-align: justify;
+    display: inline-block;
+  }
+  
+  .profile-name {
+    font-size: 19px;
+    font-weight: bold;
+  }
+  
+  .profile-role {
+    font-size: 13px;
+    color: #fff;
+  }
+  
+  .create-button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .nav-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-options ul li {
+    margin: 10px 0;
+  }
+  
+  .nav-options ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .nav-options ul li a:hover {
+    background-color: #444;
+  }
+  
+  .other-links {
+    margin-top: 20px;
+  }
+  
+  .upgrade-section {
+    margin-top: 20px;
+  }
+  
+  .upgrade-button, .refer-button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
