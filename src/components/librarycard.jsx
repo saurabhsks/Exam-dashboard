@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/librarycard.css'; // CSS file for styling
+import Bigimage from '../assets/images/Bigimage.png';
+
 
 function LibraryCard() {
   return (
@@ -7,7 +9,8 @@ function LibraryCard() {
       <div className="energy-card">
         <div className="image-placeholder">
           {/* Image placeholder */}
-          <img src="/path/to/image-placeholder.png" alt="Energy Transfer" />
+          {/* <img src="/path/to/image-placeholder.png" alt="Energy Transfer" /> */}
+          <img src={Bigimage} alt="Energy Transfer" className="" />
         </div>
         <div className="details">
           <h3>Energy Transfer</h3>
