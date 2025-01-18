@@ -1,0 +1,54 @@
+.hosted-session-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+
+  .hosted-dflex{
+    display: flex;
+  }
+  
+  
+  .session-details {
+    flex-grow: 1;
+  }
+  
+  .session-details h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .session-details p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .host-button, .leaderboard-button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .host-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .leaderboard-button {
+    background-color: #6f42c1;
+    color: white;
+  }
+  

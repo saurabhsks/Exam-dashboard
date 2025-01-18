@@ -1,0 +1,69 @@
+.energy-transfer {
+    padding: 20px;
+  }
+  
+  .energy-card {
+    display: flex;
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    position: relative;
+  }
+  
+  .image-placeholder img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+  }
+  
+  .details {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  
+  .details h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .details p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .actions {
+    margin-top: 10px;
+  }
+  
+  .edit-button, .play-button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .play-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  
