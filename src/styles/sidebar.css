@@ -5,13 +5,13 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     /* height: 100vh; */
   }
 
-  @media (min-width:770px){
+  @media (max-width:770px){
     .sidebar{
-        width: 20% !important;
+        width: 250px !important;
       }
   }
   
@@ -253,7 +253,7 @@
 
   /* ------------ */
   .sidebar {
-    width: 250px;
+    width: 20%;
     transition: width 0.3s ease;
     position: relative;
   }
