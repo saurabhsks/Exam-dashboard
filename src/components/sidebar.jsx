@@ -262,7 +262,7 @@ const Sidebar = () => {
       </button>
       <div className="profile-section">
         <div className="profile-name-outer">
-          <div className="profile-name">Prasanth</div>
+          <div className="profile-name">Saurabh</div>
           <div className="profile-role">Student</div>
         </div>
       </div>
