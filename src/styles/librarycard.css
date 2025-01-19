@@ -1,6 +1,7 @@
-/* .energy-transfer {
-    padding: 20px;
-  } */
+.energy-transfer {
+    /* padding: 20px; */
+    margin-right: 3%;
+  }
   
   .energy-card {
     display: flex;

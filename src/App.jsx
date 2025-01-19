@@ -67,6 +67,116 @@
 
 
 
+// import React, { useState } from 'react';
+// import Header from './components/header';
+// import Sidebar from './components/sidebar';
+// import LibraryCard from './components/librarycard';
+// import HostedSessionCard from './components/hostedsessioncard';
+// import MCQSection from './components/mcqsection';
+// import Leaderboard from './components/leaderboard';
+// import './styles/app.css';
+
+// function App() {
+//   const [activeLeftTab, setActiveLeftTab] = useState('my-library');
+//   const [activeRightTab, setActiveRightTab] = useState('mcq');
+
+//   const handleLeftTabClick = (tab) => {
+//     setActiveLeftTab(tab);
+//   };
+
+//   const handleRightTabClick = (tab) => {
+//     setActiveRightTab(tab);
+//   };
+
+//   return (
+//     <>
+//       <div>
+//         <Header />
+//         <div className="dashboard-container">
+//           <Sidebar />
+//           <div className="left-section">
+//             <div className="tabs">
+//               <button
+//                 className={`tab ${activeLeftTab === 'my-library' ? 'active' : ''}`}
+//                 onClick={() => handleLeftTabClick('my-library')}
+//               >
+//                 My Library
+//               </button>
+//               <button
+//                 className={`tab ${activeLeftTab === 'hosted-sessions' ? 'active' : ''}`}
+//                 onClick={() => handleLeftTabClick('hosted-sessions')}
+//               >
+//                 Hosted Sessions
+//               </button>
+//             </div>
+//             <div className={`content ${activeLeftTab === 'my-library' ? '' : 'hidden'}`}>
+//               <LibraryCard />
+//               <LibraryCard />
+//               <LibraryCard />
+//               <LibraryCard />
+//             </div>
+//             <div className={`content  ${activeLeftTab === 'hosted-sessions' ? '' : 'hidden'}`}>
+//             <div className="search-bar">
+//             <select className="genre-select">
+//            <option>ALL GENRES</option>
+//            {/* Add more options if needed */}
+//            </select>
+//            <input
+//            type="text"
+//            className="search-input"
+//            placeholder="Search your hosted games by titles or name..."
+//             />
+//             </div>
+//               <div  className='hosted-dflex'>
+//               <div>
+//                 <HostedSessionCard />
+//                 <HostedSessionCard />
+//               </div>
+//               <div>
+//                 <HostedSessionCard />
+//                 <HostedSessionCard />
+//               </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="right-section">
+//             <div className="tabs">
+//               <button
+//                 className={`tab ${activeRightTab === 'mcq' ? 'active' : ''}`}
+//                 onClick={() => handleRightTabClick('mcq')}
+//               >
+//                 MCQ's
+//               </button>
+//               <button
+//                 className={`tab ${activeRightTab === 'leaderboard' ? 'active' : ''}`}
+//                 onClick={() => handleRightTabClick('leaderboard')}
+//               >
+//                 Leaderboard
+//               </button>
+//             </div>
+//             <div className={`content ${activeRightTab === 'mcq' ? '' : 'hidden'}`}>
+//               <MCQSection/>
+//             </div>
+//             <div className={`content ${activeRightTab === 'leaderboard' ? '' : 'hidden'}`}>
+//               <Leaderboard/>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+// 2
+
 import React, { useState } from 'react';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
@@ -79,6 +189,7 @@ import './styles/app.css';
 function App() {
   const [activeLeftTab, setActiveLeftTab] = useState('my-library');
   const [activeRightTab, setActiveRightTab] = useState('mcq');
+  const [leftWidth, setLeftWidth] = useState(50); // Initial width percentage of left section
 
   const handleLeftTabClick = (tab) => {
     setActiveLeftTab(tab);
@@ -88,13 +199,23 @@ function App() {
     setActiveRightTab(tab);
   };
 
+  const handleDrag = (e) => {
+    const newLeftWidth = (e.clientX / window.innerWidth) * 100;
+    if (newLeftWidth >= 20 && newLeftWidth <= 80) { // Prevent too small or too large sections
+      setLeftWidth(newLeftWidth);
+    }
+  };
+
   return (
     <>
       <div>
         <Header />
         <div className="dashboard-container">
           <Sidebar />
-          <div className="left-section">
+          <div
+            className="left-section"
+            style={{ width: `${leftWidth}%` }}
+          >
             <div className="tabs">
               <button
                 className={`tab ${activeLeftTab === 'my-library' ? 'active' : ''}`}
@@ -115,32 +236,46 @@ function App() {
               <LibraryCard />
               <LibraryCard />
             </div>
-            <div className={`content  ${activeLeftTab === 'hosted-sessions' ? '' : 'hidden'}`}>
-            <div className="search-bar">
-            <select className="genre-select">
-           <option>ALL GENRES</option>
-           {/* Add more options if needed */}
-           </select>
-           <input
-           type="text"
-           className="search-input"
-           placeholder="Search your hosted games by titles or name..."
-            />
-            </div>
-              <div  className='hosted-dflex'>
-              <div>
-                <HostedSessionCard />
-                <HostedSessionCard />
+            <div className={`content ${activeLeftTab === 'hosted-sessions' ? '' : 'hidden'}`}>
+              <div className="search-bar">
+                <select className="genre-select">
+                  <option>ALL GENRES</option>
+                </select>
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search your hosted games by titles or name..."
+                />
               </div>
-              <div>
-                <HostedSessionCard />
-                <HostedSessionCard />
-              </div>
+              <div className="hosted-dflex">
+                <div>
+                  <HostedSessionCard />
+                  <HostedSessionCard />
+                </div>
+                <div>
+                  <HostedSessionCard />
+                  <HostedSessionCard />
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="right-section">
+          <div
+            className="divider"
+            onMouseDown={(e) => {
+              document.addEventListener('mousemove', handleDrag);
+              document.addEventListener('mouseup', () => {
+                document.removeEventListener('mousemove', handleDrag);
+              });
+            }}
+          >
+            <span className="drag-arrow">&lt;&gt;</span>
+          </div>
+
+          <div
+            className="right-section"
+            style={{ width: `${100 - leftWidth}%` }}
+          >
             <div className="tabs">
               <button
                 className={`tab ${activeRightTab === 'mcq' ? 'active' : ''}`}
@@ -156,10 +291,10 @@ function App() {
               </button>
             </div>
             <div className={`content ${activeRightTab === 'mcq' ? '' : 'hidden'}`}>
-              <MCQSection/>
+              <MCQSection />
             </div>
             <div className={`content ${activeRightTab === 'leaderboard' ? '' : 'hidden'}`}>
-              <Leaderboard/>
+              <Leaderboard />
             </div>
           </div>
         </div>
@@ -169,4 +304,6 @@ function App() {
 }
 
 export default App;
+
+
 
