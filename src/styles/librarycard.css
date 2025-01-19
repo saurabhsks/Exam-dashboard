@@ -1,6 +1,6 @@
-.energy-transfer {
+/* .energy-transfer {
     padding: 20px;
-  }
+  } */
   
   .energy-card {
     display: flex;
@@ -11,6 +11,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
     position: relative;
+    border: 1.5px solid #73737599;
+    opacity: 90%;
   }
   
   .image-placeholder img {
@@ -21,21 +23,36 @@
   
   .details {
     flex-grow: 1;
-    margin-left: 15px;
+    padding-top: 10px;
+    /* margin-left: 15px; */
   }
   
   .details h3 {
     margin: 0;
     font-size: 18px;
+    color: #00CCB3;
+    /* font-family: Inter; */
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 18.15px;
   }
   
   .details p {
     margin: 5px 0;
     font-size: 14px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 13.31px;
+  }
+
+  .library-mcq{
+    font-size: 15px;
+    color: #FDC76F;
+
   }
   
   .actions {
-    margin-top: 10px;
+    margin-top: 40px;
   }
   
   .edit-button, .play-button {
@@ -66,4 +83,63 @@
     color: white;
     cursor: pointer;
   }
+
+  .first-p{
+    color: #BCBCBC;
+  }
+
+  .left_sprite_edit{
+    background-position: -11px -162px;
+    width: 20px;
+    height: 22px;
+    background-image: url(/src/assets/images/left_sprite.png);
+    background-size: 252px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    translate: -12px 45px;
+  }
+
+  .left_sprite_edit_button {
+    background-position: -4px -4px;
+    width: 70px;
+    height: 28px;
+    background-image: url(/src/assets/images/left_sprite.png);
+    background-size: 122px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    translate: 6px -6px;
+}
+
+.left_sprite_play_button {
+    background-position: -162px -9px;
+    width: 70px;
+    height: 28px;
+    background-image: url(/src/assets/images/left_sprite.png);
+    background-size: 241px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    translate: 6px -2px;
+}
+
+.left_sprite_delete_button {
+    background-position: -222px -80px;
+    width: 22px;
+    height: 22px;
+    background-image: url(/src/assets/images/left_sprite.png);
+    background-size: 319px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    translate: 56px -44px;
+}
+
+.hosted-mcq{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 12.1px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #739af9;
+}
   

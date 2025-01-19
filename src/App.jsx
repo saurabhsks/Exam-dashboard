@@ -72,6 +72,8 @@ import Header from './components/header';
 import Sidebar from './components/sidebar';
 import LibraryCard from './components/librarycard';
 import HostedSessionCard from './components/hostedsessioncard';
+import MCQSection from './components/mcqsection';
+import Leaderboard from './components/leaderboard';
 import './styles/app.css';
 
 function App() {
@@ -113,7 +115,19 @@ function App() {
               <LibraryCard />
               <LibraryCard />
             </div>
-            <div className={`content hosted-dflex ${activeLeftTab === 'hosted-sessions' ? '' : 'hidden'}`}>
+            <div className={`content  ${activeLeftTab === 'hosted-sessions' ? '' : 'hidden'}`}>
+            <div className="search-bar">
+            <select className="genre-select">
+           <option>ALL GENRES</option>
+           {/* Add more options if needed */}
+           </select>
+           <input
+           type="text"
+           className="search-input"
+           placeholder="Search your hosted games by titles or name..."
+            />
+            </div>
+              <div  className='hosted-dflex'>
               <div>
                 <HostedSessionCard />
                 <HostedSessionCard />
@@ -121,6 +135,7 @@ function App() {
               <div>
                 <HostedSessionCard />
                 <HostedSessionCard />
+              </div>
               </div>
             </div>
           </div>
@@ -141,10 +156,10 @@ function App() {
               </button>
             </div>
             <div className={`content ${activeRightTab === 'mcq' ? '' : 'hidden'}`}>
-              {/* MCQ content goes here */}
+              <MCQSection/>
             </div>
             <div className={`content ${activeRightTab === 'leaderboard' ? '' : 'hidden'}`}>
-              {/* Leaderboard content goes here */}
+              <Leaderboard/>
             </div>
           </div>
         </div>
