@@ -102,9 +102,9 @@
     position: relative;
   }
   
-  .left-section, .right-section {
+  /* .left-section, .right-section {
     overflow: auto;
-  }
+  } */
   
   .divider {
     width: 6px;
