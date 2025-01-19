@@ -171,10 +171,6 @@
 // export default App;
 
 
-
-
-
-
 // 2
 
 import React, { useState } from 'react';
@@ -269,7 +265,7 @@ function App() {
               });
             }}
           >
-            <span className="drag-arrow">&lt;&gt;</span>
+            <span className="drag-arrow d-none d-md-block">&lt;&gt;</span>
           </div>
 
           <div

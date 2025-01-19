@@ -6,6 +6,7 @@
   
   .left-section, .right-section {
     width: 48%;
+    margin-top: 4.5% !important;
   }
   
   .tabs {
