@@ -87,3 +87,8 @@
     margin-bottom: 18px;
   }
   
+  @media (max-width:770px){
+    .hosted-questions{
+        line-height: 16px;
+    }
+  }

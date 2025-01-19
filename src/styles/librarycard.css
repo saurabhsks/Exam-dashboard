@@ -1,7 +1,6 @@
-.energy-transfer {
-    /* padding: 20px; */
+/* .energy-transfer {
     margin-right: 3%;
-  }
+  } */
   
   .energy-card {
     display: flex;
@@ -144,3 +143,8 @@
     color: #739af9;
 }
   
+@media (max-width:770px){
+    .left_sprite_edit {
+        translate: 79px -14px;
+    }
+}
