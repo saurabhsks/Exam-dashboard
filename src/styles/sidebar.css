@@ -310,7 +310,7 @@
     margin-bottom: 10px;
   }
   
-  @media(min-width:768px){
+  @media(min-width:769px){
     .sidebar.collapsed .profile-name-outer, 
     .sidebar.collapsed .create-button,
     .sidebar.collapsed .nav-options,
