@@ -182,6 +182,45 @@ import MCQSection from './components/mcqsection';
 import Leaderboard from './components/leaderboard';
 import './styles/app.css';
 
+const libraryData = [
+  {
+    title: "Energy Transfer",
+    difficulty: "Easy",
+    questions: 20,
+    time: "60s",
+    createdBy: "Rahul",
+    genre: "Tech",
+    createdOn: "07/08/2024 | 1:05 PM"
+  },
+  {
+    title: "Machine Learning",
+    difficulty: "Medium",
+    questions: 25,
+    time: "90s",
+    createdBy: "Aditi",
+    genre: "AI",
+    createdOn: "06/08/2024 | 3:30 PM"
+  },
+  {
+    title: "Blockchain",
+    difficulty: "Hard",
+    questions: 15,
+    time: "45s",
+    createdBy: "Vikash",
+    genre: "Finance",
+    createdOn: "05/08/2024 | 12:10 PM"
+  },
+  {
+    title: "Web Development",
+    difficulty: "Easy",
+    questions: 30,
+    time: "120s",
+    createdBy: "Neha",
+    genre: "Programming",
+    createdOn: "04/08/2024 | 10:20 AM"
+  }
+];
+
 function App() {
   const [activeLeftTab, setActiveLeftTab] = useState('my-library');
   const [activeRightTab, setActiveRightTab] = useState('mcq');
@@ -227,10 +266,18 @@ function App() {
               </button>
             </div>
             <div className={`content ${activeLeftTab === 'my-library' ? '' : 'hidden'}`}>
-              <LibraryCard />
-              <LibraryCard />
-              <LibraryCard />
-              <LibraryCard />
+            {libraryData.map((item, index) => (
+                <LibraryCard 
+                  key={index}
+                  title={item.title}
+                  difficulty={item.difficulty}
+                  questions={item.questions}
+                  time={item.time}
+                  createdBy={item.createdBy}
+                  genre={item.genre}
+                  createdOn={item.createdOn}
+                />
+              ))}
             </div>
             <div className={`content ${activeLeftTab === 'hosted-sessions' ? '' : 'hidden'}`}>
               <div className="search-bar">
